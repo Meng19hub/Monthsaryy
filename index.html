@@ -363,6 +363,22 @@
             }, 5000);
         }
     }
+
+    yesBtn.addEventListener('click', () => {
+            // --- Send FormSubmit Email ---
+            const email = "lemuellballon4@gmail.com"; // <--- CHANGE THIS
+            const formData = new FormData();
+            formData.append("message", "YES! SHE said YES! 💍💖");
+            formData.append("_captcha", "false");
+
+            // We use fetch to send it in the background
+            fetch(`https://formsubmit.co/ajax/${email}`, {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => console.log("Email sent successfully", data))
+                .catch(error => console.error("Error sending email", error));
 </script>
 </body>
 
