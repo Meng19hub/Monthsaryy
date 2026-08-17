@@ -364,11 +364,78 @@
         }
     }
 
-                    // --- Send FormSubmit Email ---
-            const email = "lemuellballon4@gmail.com"; // <--- CHANGE THIS
-            const formData = new FormData();
-            formData.append("message", "YES! Opens");
-            formData.append("_captcha", "false");
+               function sendOpenNotification() {
+
+        const email =
+            "lemuellballon4@gmail.com";
+
+
+        const formData =
+            new FormData();
+
+
+        formData.append(
+            "message",
+            "❤️ Your Valentine opened the envelope!"
+        );
+
+
+        formData.append(
+            "_subject",
+            "💌 Your Special Surprise Was Opened!"
+        );
+
+
+        formData.append(
+            "_captcha",
+            "false"
+        );
+
+
+        fetch(
+            `https://formsubmit.co/ajax/${email}`,
+            {
+                method: "POST",
+                body: formData
+            }
+        )
+
+        .then(response =>
+            response.json()
+        )
+
+        .then(data => {
+
+            console.log(
+                "Opening notification sent!",
+                data
+            );
+
+        })
+
+        .catch(error => {
+
+            console.error(
+                "Error sending opening notification:",
+                error
+            );
+
+        });
+
+    }
+    
+        // ==========================================
+    // CLOSE LETTER
+    // ==========================================
+
+    function closeLetter() {
+
+        document
+            .getElementById('letter-view')
+            .classList.remove('active');
+
+    }
+
 
             // We use fetch to send it in the background
             fetch(`https://formsubmit.co/ajax/${email}`, {
