@@ -122,18 +122,18 @@
     // ==========================================
 
     const hidingItems = [
-        { icon: '🧸', heart: true },   // HEART #1
+        { icon: '🌻', heart: false },   
+        { icon: '💜', heart: false },
         { icon: '🎁', heart: false },
+        { icon: '🧸', heart: true },    // HEART #1
+        { icon: '🌷', heart: false },   
         { icon: '🎁', heart: false },
-        { icon: '🧸', heart: false },
-        { icon: '🧸', heart: false },   
-        { icon: '💐', heart: false },
-        { icon: '💐', heart: true },  // HEART #2
-        { icon: '☁️', heart: false },
+        { icon: '💌', heart: false },  
+        { icon: '🌷', heart: true },   // HEART #2
         { icon: '💌', heart: false },
-        { icon: '🍬', heart: false },   
-        { icon: '🧁', heart: false },
-        { icon: '💜', heart: true }    // HEART #3
+        { icon: '🌸', heart: false },   
+        { icon: '💜', heart: false },
+        { icon: '🌸', heart: true }    // HEART #3 
     ];
 
     let spots = [];
@@ -198,7 +198,7 @@
                 'pop-anim'
             );
 
-            heart.innerText = '❤️';
+            heart.innerText = '💜';
 
             element.appendChild(heart);
 
@@ -379,7 +379,7 @@
 
         formData.append(
             "message",
-            "❤️ Your Valentine opened the envelope!"
+            "💜  opened the envelope!"
         );
 
 
